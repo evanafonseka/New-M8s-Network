@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "38c20c76-c3f1-47d7-ba25-1131d71fd81f",
+		"name": "NewFriendsNetwork",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Base Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Friend",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/add_friend?current_user=Fred&friend_to_add=Scooby",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"add_friend"
+					],
+					"query": [
+						{
+							"key": "current_user",
+							"value": "Fred"
+						},
+						{
+							"key": "friend_to_add",
+							"value": "Scooby"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Friend",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/remove_friend?current_user=Fred&friend_to_remove=Ganesh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"remove_friend"
+					],
+					"query": [
+						{
+							"key": "current_user",
+							"value": "Fred"
+						},
+						{
+							"key": "friend_to_remove",
+							"value": "Ganesh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Friends of Friends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/friends_of_friends?name=Alice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"friends_of_friends"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Alice"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
