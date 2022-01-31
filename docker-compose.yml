@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  api_consumer:
+    build:
+      context: ./app
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app:/app
+    command: ['python', 'main.py']
+    ports:
+      - "4000:4000"
