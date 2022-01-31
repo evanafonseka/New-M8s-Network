@@ -24,8 +24,8 @@ docker-compose up
 ```
 git clone https://github.com/evanafonseka/New-M8s-Network.git
 cd NewFriendsNetwork/app
-python3 -m venv <name_of_virtualenv>
-source <name_of_virtualenv>/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
