@@ -85,7 +85,7 @@ class NewFriend:
         if len(output) >= 1:
             return output
         else:
-            return logger.error("Sorry you have no mutual friends :(")
+            return logger.error(f"Sorry {name} has no potential mutual friends :(")
                     
 
 
