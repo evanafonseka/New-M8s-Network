@@ -10,12 +10,12 @@ Design a system for my “New Friend Network”. Given a list of people and thei
 Designed an API to include:
 - Adding friends
 - Removing friends
-- Listing Friends of friends. eg Bob  “friend of a friend”  is [“Fred”]
+- Listing Friends of friends. eg Bob  “friend of a friend” is `[“Fred”]`
 
 ## Solution
 - Please see `NewFriend.py` that handles the transformation of the string and returns the output as json
-- Data structure used was a hashset: `name_keeper` for memory purposes, with the assumption that more names will be input 
-- Therefore, a list will not be "efficient" especially when searching for *friends of friends*
+- Data structure used is a hashset: `name_keeper` for memory purposes, with the assumption that more names will be input 
+- Therefore, a list would not be efffective especially when searching for *friends of friends*
 - Please see `NewFriendsNetwork.postman_collection.json` for example requests to speak to the API
 
 ## How to Run
@@ -56,7 +56,7 @@ Open up `http://localhost:4000/` on your browser (or the postman collection)
 ```
 
 ### /add_friend
--Takes in:
+- Parameters:
   - current_user
   - friend_to_add
 
@@ -66,7 +66,7 @@ http://localhost:4000/add_friend?current_user={Fred}&friend_to_add={Scooby}
 ```
 
 ### /remove_friend
--Takes in:
+- Parameters:
   - current_user
   - friend_to_remove
 
@@ -77,7 +77,7 @@ http://localhost:4000/remove_friend?current_user={Fred}&friend_to_remove={Ganesh
 ```
 
 ### /friends_of_friends
--Takes in:
+- Parameter:
   - name
 
 E.G.
