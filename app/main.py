@@ -1,3 +1,10 @@
+"""
+Main script to run the API
+The API filters strings and allows users to add, remove and list friends of friends
+"""
+
+__author__ = "Evan Fonseka"
+
 from flask import Flask, jsonify, request
 from flask_cors import cross_origin
 from NewFriend import NewFriend
