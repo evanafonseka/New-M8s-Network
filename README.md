@@ -28,11 +28,11 @@ docker-compose up
 ### Other (Not as Preferred)
 ```
 git clone https://github.com/evanafonseka/New-M8s-Network.git
-pip install -r requirements.txt
-python main.py
+pip3 install -r requirements.txt
+python3 main.py
 ```
 
-Open up http://localhost:4000/ on your browser (or the postman collection)
+Open up `http://localhost:4000/` on your browser (or the postman collection)
 
 
 ## API Endpoints
