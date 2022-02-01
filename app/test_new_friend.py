@@ -45,6 +45,15 @@ class TestNewFriend(ut.TestCase):
         self.instance.add_initial_friends(self.test_data)
         self.instance.add_friend("Fred", "Evan")
         self.assertTrue("Evan" in self.instance.name_keeper["Fred"])
+        
+    def test_add_friend_none(self):
+        """
+        Test that adding a None value will not be input into the friends list
+        """
+        self.instance.add_initial_friends(self.test_data)
+        self.instance.add_friend("Fred", None)
+        self.assertFalse(None in self.instance.name_keeper["Fred"])
+
 
     def test_remove_friend(self):
         """

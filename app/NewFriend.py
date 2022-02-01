@@ -50,8 +50,12 @@ class NewFriend:
         Args:
             name_key (str): Takes in the profile name
             friend_to_add (str): Friend that can be added
-        """        
-        self.name_keeper[name_key] |= {friend_to_add}
+        """
+        if friend_to_add is not None:
+            self.name_keeper[name_key] |= {friend_to_add}
+        else:
+            return logger.error(f"Sorry your {friend_to_add} does not exists, please try again")
+
 
     def remove_friend(self, name_key: str, friend_to_remove: str):
         """Remove a Friend
