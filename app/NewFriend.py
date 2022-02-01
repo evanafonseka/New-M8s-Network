@@ -45,9 +45,7 @@ class NewFriend:
         return dict(zip(self.name_keeper.keys(), map(list, self.name_keeper.values())))
 
     def add_friend(self, name_key: str, friend_to_add: str):
-        """Add a Friend -> POST
-        
-        As we are creating a new friend request.
+        """Add a Friend
 
         Args:
             name_key (str): Takes in the profile name
@@ -56,9 +54,7 @@ class NewFriend:
         self.name_keeper[name_key] |= {friend_to_add}
 
     def remove_friend(self, name_key: str, friend_to_remove: str):
-        """Remove a Friend -> PUT
-        
-        As we are updating our current content
+        """Remove a Friend
 
         Args:
             name_key (str): Takes in the profile name
@@ -68,7 +64,7 @@ class NewFriend:
         
 
     def list_friends_of_friends(self, name: str) -> list:
-        """Find Mutual Friends -> GET
+        """Find Mutual Friends
 
         Args:
             name (str): Takes in a name, looks at their friends and finds possible mutual friends.

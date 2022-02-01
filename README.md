@@ -14,7 +14,7 @@ Designed an API to include:
 
 ## Solution
 - Please see `NewFriend.py` that handles the transformation of the string and returns the output as json
-- Data structure used was a hashset for memory purposes, with the assumption that repeated names will be input 
+- Data structure used was a hashset: `name_keeper` for memory purposes, with the assumption that more names will be input 
 - Therefore, a list will not be "efficient" especially when searching for *friends of friends*
 - Please see `NewFriendsNetwork.postman_collection.json` for example requests to speak to the API
 
