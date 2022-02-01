@@ -24,7 +24,7 @@ class NewFriend:
         name_value = names[-1]
         self.name_keeper[name_key] |= {name_value}
 
-    def add_initial_friends(self, names: list):
+    def add_friends(self, names: list):
         """Add Initial Friends
 
         Args:
@@ -33,7 +33,7 @@ class NewFriend:
         for n in names:
             self.name_organiser(n)
 
-    def json_output(self) -> dict:
+    def to_json(self) -> dict:
         """Converts our hashset name keeper into a jsonifiable object
 
         Args:

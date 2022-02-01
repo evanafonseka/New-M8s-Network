@@ -29,12 +29,12 @@ class TestNewFriend(ut.TestCase):
             "Fred": {"Ganesh"},
             "Julie": {"Ganesh"}
         }
-        self.instance.add_initial_friends(self.test_data)
+        self.instance.add_friends(self.test_data)
         self.assertEqual(self.instance.name_keeper, expected)
 
-    def test_json_output(self):
-        self.instance.add_initial_friends(self.test_data)
-        output = self.instance.json_output()
+    def test_to_json(self):
+        self.instance.add_friends(self.test_data)
+        output = self.instance.to_json()
         self.assertTrue(type(output) is dict)
 
 
@@ -42,7 +42,7 @@ class TestNewFriend(ut.TestCase):
         """
         Test adding a friend. Case where Fred adds Evan as a friend
         """
-        self.instance.add_initial_friends(self.test_data)
+        self.instance.add_friends(self.test_data)
         self.instance.add_friend("Fred", "Evan")
         self.assertTrue("Evan" in self.instance.name_keeper["Fred"])
         
@@ -50,7 +50,7 @@ class TestNewFriend(ut.TestCase):
         """
         Test that adding a None value will not be input into the friends list
         """
-        self.instance.add_initial_friends(self.test_data)
+        self.instance.add_friends(self.test_data)
         self.instance.add_friend("Fred", None)
         self.assertFalse(None in self.instance.name_keeper["Fred"])
 
@@ -60,7 +60,7 @@ class TestNewFriend(ut.TestCase):
         Test removing friends. Case where Bobs friend is Alice,
             hence Bob once removing Alice will be pointing to an empty list.
         """
-        self.instance.add_initial_friends(self.test_data)
+        self.instance.add_friends(self.test_data)
         self.instance.remove_friend(name_key="Bob", friend_to_remove="Alice")
         self.assertEqual(self.instance.name_keeper["Bob"], set())
 
@@ -70,7 +70,7 @@ class TestNewFriend(ut.TestCase):
             E.g. Bob -> Alice -> [Fred and Ganesh]
         :return:
         """
-        self.instance.add_initial_friends(self.test_data)
+        self.instance.add_friends(self.test_data)
         friends_of_friends = self.instance.list_friends_of_friends(name="Bob")
         self.assertListEqual(friends_of_friends, ["Ganesh", "Fred"])
 

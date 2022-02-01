@@ -16,13 +16,13 @@ app.config["JSONIFY_PRETTYPRINT_REGULAR"] = True
 
 BASE_DATA = ["Bob knows Alice", "Alice knows Fred", "Fred knows Ganesh", "Julie knows Ganesh"]
 new_friends_instance = NewFriend()
-new_friends_instance.add_initial_friends(BASE_DATA)
+new_friends_instance.add_friends(BASE_DATA)
 
 
 @app.route("/")
 @cross_origin()
 def index():
-    return jsonify(new_friends_instance.json_output())
+    return jsonify(new_friends_instance.to_json())
 
 
 @app.route("/add_friend")
@@ -31,7 +31,7 @@ def add_friend():
     current_user = request.args.get("current_user")
     friend_to_add = request.args.get("friend_to_add")
     new_friends_instance.add_friend(name_key=current_user, friend_to_add=friend_to_add)
-    return jsonify(new_friends_instance.json_output())
+    return jsonify(new_friends_instance.to_json())
 
 
 @app.route("/remove_friend")
@@ -40,7 +40,7 @@ def remove_friend():
     current_user = request.args.get("current_user")
     friend_to_remove = request.args.get("friend_to_remove")
     new_friends_instance.remove_friend(name_key=current_user, friend_to_remove=friend_to_remove)
-    return jsonify(new_friends_instance.json_output())
+    return jsonify(new_friends_instance.to_json())
 
 
 @app.route("/friends_of_friends")
