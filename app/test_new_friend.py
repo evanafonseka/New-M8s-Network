@@ -1,4 +1,4 @@
-import  unittest as ut
+import unittest as ut
 from NewFriend import NewFriend
 
 
@@ -37,7 +37,6 @@ class TestNewFriend(ut.TestCase):
         output = self.instance.to_json()
         self.assertTrue(type(output) is dict)
 
-
     def test_add_friend(self):
         """
         Test adding a friend. Case where Fred adds Evan as a friend
@@ -45,7 +44,7 @@ class TestNewFriend(ut.TestCase):
         self.instance.add_friends(self.test_data)
         self.instance.add_friend("Fred", "Evan")
         self.assertTrue("Evan" in self.instance.name_keeper["Fred"])
-        
+
     def test_add_friend_none(self):
         """
         Test that adding a None value will not be input into the friends list
@@ -53,7 +52,6 @@ class TestNewFriend(ut.TestCase):
         self.instance.add_friends(self.test_data)
         self.instance.add_friend("Fred", None)
         self.assertFalse(None in self.instance.name_keeper["Fred"])
-
 
     def test_remove_friend(self):
         """
@@ -73,8 +71,3 @@ class TestNewFriend(ut.TestCase):
         self.instance.add_friends(self.test_data)
         friends_of_friends = self.instance.list_friends_of_friends(name="Bob")
         self.assertListEqual(friends_of_friends, ["Ganesh", "Fred"])
-
-
-
-
-
